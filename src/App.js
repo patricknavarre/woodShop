@@ -101,7 +101,7 @@ function App() {
                           <div className="absolute inset-0 bg-gradient-to-r from-amber-100 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                         </Link>
                         <a
-                          href="mailto:patricknavarre@gmail.com?subject=Custom%20Woodwork%20Quote%20Request&body=Hello%2C%0A%0AI'm%20interested%20in%20a%20custom%20piece.%20Here%20are%20the%20details%3A%0A%0AType%20of%20Item%3A%0ADimensions%3A%0APreferred%20Wood%20Type%3A%0ASpecial%20Requirements%3A%0A%0AThank%20you!"
+                          href="mailto:patnavarre@gmail.com?subject=Custom%20Woodwork%20Quote%20Request&body=Hello%2C%0A%0AI'm%20interested%20in%20a%20custom%20piece.%20Here%20are%20the%20details%3A%0A%0AType%20of%20Item%3A%0ADimensions%3A%0APreferred%20Wood%20Type%3A%0ASpecial%20Requirements%3A%0A%0AThank%20you!"
                           className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 px-8 py-4 text-lg font-semibold text-white shadow-warm hover:from-amber-600 hover:to-amber-700 transform hover:scale-105 transition-all duration-200"
                         >
                           <span className="relative z-10">Request Quote</span>
