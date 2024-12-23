@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Popover } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import CustomOrders from "./pages/CustomOrders";
 import About from "./pages/About";
 import Products from "./pages/Products";
@@ -17,44 +18,82 @@ function App() {
       <div className="bg-white">
         <header className="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-warm">
           <Popover className="relative">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6">
-              <div className="flex items-center justify-between py-4">
-                <div className="flex justify-start lg:w-0 lg:flex-1">
-                  <Link to="/" className="group flex items-center space-x-2">
-                    <span className="sr-only">Your Woodcraft</span>
-                    <svg
-                      className="h-8 w-8 text-amber-600 group-hover:text-amber-700 transition-colors"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      {/* Simple logo - you can replace this with your own */}
-                      <path d="M12 2L2 8l10 6 10-6-10-6zM2 16l10 6 10-6-10-6-10 6z" />
-                    </svg>
-                    <h1 className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-amber-800 bg-clip-text text-transparent">
-                      WoodCraft
-                    </h1>
-                  </Link>
+            {({ open }) => (
+              <>
+                <div className="mx-auto max-w-7xl px-4 sm:px-6">
+                  <div className="flex items-center justify-between py-4">
+                    <div className="flex justify-start lg:w-0 lg:flex-1">
+                      <Link
+                        to="/"
+                        className="group flex items-center space-x-2"
+                      >
+                        <span className="sr-only">Your Woodcraft</span>
+                        <svg
+                          className="h-8 w-8 text-amber-600 group-hover:text-amber-700 transition-colors"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M12 2L2 8l10 6 10-6-10-6zM2 16l10 6 10-6-10-6-10 6z" />
+                        </svg>
+                        <h1 className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-amber-800 bg-clip-text text-transparent">
+                          WoodCraft
+                        </h1>
+                      </Link>
+                    </div>
+
+                    <div className="md:hidden">
+                      <Popover.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-600 hover:text-amber-600 focus:outline-none">
+                        <span className="sr-only">Open menu</span>
+                        {open ? (
+                          <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                        ) : (
+                          <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+                        )}
+                      </Popover.Button>
+                    </div>
+
+                    <div className="hidden md:flex items-center space-x-8">
+                      {navigation.map((item) => (
+                        <Link
+                          key={item.name}
+                          to={item.to}
+                          className="text-base font-medium text-gray-600 hover:text-amber-600 transition-colors relative group"
+                        >
+                          {item.name}
+                          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-600 transition-all group-hover:w-full" />
+                        </Link>
+                      ))}
+                      <Link
+                        to="/products"
+                        className="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 transform hover:scale-105 transition-all duration-200"
+                      >
+                        Shop Now
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-                <div className="hidden md:flex items-center space-x-8">
-                  {navigation.map((item) => (
+
+                <Popover.Panel className="absolute inset-x-0 top-full bg-white/95 backdrop-blur-md shadow-lg md:hidden">
+                  <div className="space-y-1 px-4 py-4">
+                    {navigation.map((item) => (
+                      <Link
+                        key={item.name}
+                        to={item.to}
+                        className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-amber-600 hover:bg-amber-50 rounded-md transition-colors"
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
                     <Link
-                      key={item.name}
-                      to={item.to}
-                      className="text-base font-medium text-gray-600 hover:text-amber-600 transition-colors relative group"
+                      to="/products"
+                      className="block w-full mt-4 px-4 py-2 text-center rounded-md text-white bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 transition-colors"
                     >
-                      {item.name}
-                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-600 transition-all group-hover:w-full" />
+                      Shop Now
                     </Link>
-                  ))}
-                  <Link
-                    to="/products"
-                    className="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 transform hover:scale-105 transition-all duration-200"
-                  >
-                    Shop Now
-                  </Link>
-                </div>
-              </div>
-            </div>
+                  </div>
+                </Popover.Panel>
+              </>
+            )}
           </Popover>
         </header>
 
