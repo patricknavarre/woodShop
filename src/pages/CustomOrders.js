@@ -47,8 +47,45 @@ export default function CustomOrders() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log(formData);
+
+    // Create email body with form data
+    const emailBody = `
+Hello!
+
+A new custom order request has been submitted:
+
+Product Type: ${
+      formData.productType
+        ? productTypes.find((p) => p.id === formData.productType)?.name
+        : "Not specified"
+    }
+Wood Type: ${
+      formData.woodType
+        ? woodTypes.find((w) => w.id === formData.woodType)?.name
+        : "Not specified"
+    }
+Dimensions: ${formData.dimensions || "Not specified"}
+
+Special Requests:
+${formData.specialRequests || "None"}
+
+Contact Information:
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+Thank you!
+    `.trim();
+
+    // Encode the email body for mailto link
+    const mailtoLink = `mailto:patnavarre@gmail.com?subject=Custom${
+      formData.productType
+        ? " " + productTypes.find((p) => p.id === formData.productType)?.name
+        : ""
+    } Order Request&body=${encodeURIComponent(emailBody)}`;
+
+    // Open email client
+    window.location.href = mailtoLink;
   };
 
   return (
