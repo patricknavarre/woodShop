@@ -26,19 +26,32 @@ function App() {
                     <div className="flex justify-start lg:w-0 lg:flex-1">
                       <Link
                         to="/"
-                        className="group flex items-center space-x-2"
+                        className="group flex items-center space-x-3"
                       >
-                        <span className="sr-only">Your Woodcraft</span>
+                        <span className="sr-only">Grit & Grain</span>
                         <svg
                           className="h-8 w-8 text-amber-600 group-hover:text-amber-700 transition-colors"
                           fill="currentColor"
                           viewBox="0 0 24 24"
                         >
-                          <path d="M12 2L2 8l10 6 10-6-10-6zM2 16l10 6 10-6-10-6-10 6z" />
+                          <path d="M7 6.5C7 5.67 7.67 5 8.5 5h7c.83 0 1.5.67 1.5 1.5v11c0 .83-.67 1.5-1.5 1.5h-7A1.5 1.5 0 017 17.5v-11zm2 0v11h6v-11h-6zm-4-2A1.5 1.5 0 016.5 3h11A1.5 1.5 0 0119 4.5v15a1.5 1.5 0 01-1.5 1.5h-11A1.5 1.5 0 015 19.5v-15z" />
                         </svg>
-                        <h1 className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-amber-800 bg-clip-text text-transparent">
-                          WoodCraft
-                        </h1>
+                        <div>
+                          <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
+                            <span className="font-extrabold uppercase tracking-tighter">
+                              Grit
+                            </span>
+                            <span className="font-light mx-1 text-amber-600">
+                              &
+                            </span>
+                            <span className="font-extrabold uppercase tracking-tighter">
+                              Grain
+                            </span>
+                          </h1>
+                          <p className="text-[10px] text-amber-600 tracking-[0.2em] font-bold uppercase">
+                            Veteran Crafted
+                          </p>
+                        </div>
                       </Link>
                     </div>
 
