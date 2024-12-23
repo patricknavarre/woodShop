@@ -140,15 +140,13 @@ function App() {
                           <span className="relative z-10">View Collection</span>
                           <div className="absolute inset-0 bg-gradient-to-r from-amber-100 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                         </Link>
-                        <a
-                          href="mailto:patnavarre@gmail.com?subject=Custom%20Woodwork%20Quote%20Request&body=Hello!%0D%0A%0D%0AI'm%20interested%20in%20a%20custom%20piece.%20Here%20are%20the%20details:%0D%0A%0D%0AType%20of%20Item:%0D%0ADimensions:%0D%0APreferred%20Wood%20Type:%0D%0ASpecial%20Requirements:%0D%0A%0D%0AThank%20you!"
+                        <Link
+                          to="/custom-orders"
                           className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 px-8 py-4 text-lg font-semibold text-white shadow-warm hover:from-amber-600 hover:to-amber-700 transform hover:scale-105 transition-all duration-200"
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
-                          <span className="relative z-10">Request Quote</span>
+                          <span className="relative z-10">Custom Orders</span>
                           <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-transparent opacity-0 group-hover:opacity-20 transition-opacity" />
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
