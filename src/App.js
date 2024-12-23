@@ -1,7 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { Fragment } from "react";
-import { Popover, Transition } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Popover } from "@headlessui/react";
 import CustomOrders from "./pages/CustomOrders";
 import About from "./pages/About";
 import Products from "./pages/Products";
