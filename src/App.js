@@ -5,6 +5,7 @@ import CustomOrders from "./pages/CustomOrders";
 import About from "./pages/About";
 import Products from "./pages/Products";
 
+// Version 1.0.1 - Added mobile navigation
 const navigation = [
   { name: "Home", to: "/" },
   { name: "Products", to: "/products" },
